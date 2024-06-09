@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { initFlowbite } from 'flowbite';
+import { LocalStorageService } from './services/local-storage.service';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,8 @@ import { initFlowbite } from 'flowbite';
 })
 export class AppComponent {
   title = 'smart-kitchen';
+
+  constructor(public localStorageService: LocalStorageService) {}
 
   ngOnInit(): void {
     initFlowbite();
