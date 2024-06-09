@@ -6,6 +6,4 @@ import { Component } from '@angular/core';
   styleUrl: './recipes.component.scss'
 })
 export class RecipesComponent {
-  recipes: Array<any> = [];
-
 }
