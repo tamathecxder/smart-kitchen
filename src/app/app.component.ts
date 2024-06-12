@@ -12,6 +12,8 @@ export class AppComponent {
 
   constructor(public localStorageService: LocalStorageService) {}
 
+  onNavigate(data: string) {}
+
   ngOnInit(): void {
     initFlowbite();
   }
