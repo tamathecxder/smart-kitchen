@@ -9,10 +9,13 @@ import { LocalStorageService } from './services/local-storage.service';
 })
 export class AppComponent {
   title = 'smart-kitchen';
+  loadedFeature: string = 'recipe';
 
   constructor(public localStorageService: LocalStorageService) {}
 
-  onNavigate(data: string) {}
+  onNavigate(feature: string) {
+    this.loadedFeature = feature;
+  }
 
   ngOnInit(): void {
     initFlowbite();
