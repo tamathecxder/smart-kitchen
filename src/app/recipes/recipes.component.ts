@@ -9,7 +9,8 @@ import { Recipe } from './recipe.model';
 export class RecipesComponent {
   selectedRecipe: Recipe;
 
-  onRecipeSelected(recipe: Recipe) {
+  onRecipeWasSelected(recipe: Recipe) {
     this.selectedRecipe = recipe;
+    console.log(this.selectedRecipe);
   }
 }
