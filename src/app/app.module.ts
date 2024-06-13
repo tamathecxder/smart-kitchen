@@ -13,6 +13,7 @@ import { RecipeListComponent } from './recipes/recipe-list/recipe-list.component
 import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-item.component';
 import { SuccessAlertComponent } from './ui/success-alert/success-alert.component';
 import { ErrorAlertComponent } from './ui/error-alert/error-alert.component';
+import { DropdownDirective } from './shared/directives/dropdown.directive';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ErrorAlertComponent } from './ui/error-alert/error-alert.component';
     ShoppingListComponent,
     ShoppingEditComponent,
     SuccessAlertComponent,
-    ErrorAlertComponent
+    ErrorAlertComponent,
+    DropdownDirective
   ],
   imports: [
     BrowserModule
