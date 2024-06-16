@@ -5,7 +5,7 @@
   <div class="col-span-3 bg-gray-50 rounded-xl shadow sticky top-0">
     <app-recipe-detail [recipe]="selectedRecipe" *ngIf="selectedRecipe; else noRecipeSelected"></app-recipe-detail>
     <ng-template #noRecipeSelected>
-      <p class="text-center text-gray-500">No recipe selected</p>
+      <p class="text-center text-gray-500 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">No recipe selected</p>
     </ng-template>
   </div>
 </div>
