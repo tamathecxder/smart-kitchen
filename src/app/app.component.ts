@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { initFlowbite } from 'flowbite';
-import { LocalStorageService } from './services/local-storage.service';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +10,7 @@ export class AppComponent {
   title = 'smart-kitchen';
   loadedFeature: string = 'recipe';
 
-  constructor(public localStorageService: LocalStorageService) {}
+  constructor() {}
 
   onNavigate(feature: string) {
     this.loadedFeature = feature;
