@@ -9,8 +9,9 @@ export class DropdownDirective {
   constructor() { }
 
   @HostListener('click') toggleDropdown() {
-    let button = document.getElementById('dropdownDefaultButton');
+    let button = document.getElementById('detailDropdownBtn');
     let dropdown = button?.nextElementSibling;
+
     if (dropdown) {
       dropdown.classList.toggle('hidden');
       dropdown.classList.toggle('block');
