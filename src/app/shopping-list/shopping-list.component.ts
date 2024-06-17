@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Ingredient } from '../shared/models/ingredient.model';
 import { ShoppingListService } from '../shared/services/shopping-list.service';
 
@@ -9,13 +9,11 @@ import { ShoppingListService } from '../shared/services/shopping-list.service';
   providers: [ShoppingListService]
 })
 export class ShoppingListComponent {
-  ingredients: Ingredient[];
+  @Input() ingredients: Ingredient[];
 
   constructor(private shoppingListService: ShoppingListService) {}
 
   ngOnInit() {
-    this.ingredients = this.shoppingListService.getIngredients();
-
     this.shoppingListService.ingredientAdded.subscribe((ingredients: Ingredient[]) => {
       this.ingredients = ingredients;
     });
