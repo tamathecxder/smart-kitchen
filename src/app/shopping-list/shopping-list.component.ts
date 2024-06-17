@@ -17,9 +17,6 @@ export class ShoppingListComponent {
     this.ingredients = this.shoppingListService.getIngredients();
 
     this.shoppingListService.ingredientAdded.subscribe((ingredients: Ingredient[]) => {
-      console.log(ingredients, 'ingredienrirs');
-
-
       this.ingredients = ingredients;
     });
   }
