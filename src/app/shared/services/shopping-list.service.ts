@@ -5,7 +5,7 @@ import { Ingredient } from '../models/ingredient.model';
   providedIn: 'root'
 })
 export class ShoppingListService {
-  ingredientAdded = new EventEmitter<Ingredient>();
+  ingredientAdded = new EventEmitter<Ingredient[]>();
 
   private ingredients: Ingredient[] = [
     new Ingredient('Apples', 5),
@@ -19,23 +19,8 @@ export class ShoppingListService {
     return this.ingredients.slice();
   }
 
-  addIngredient(nameInputRef: ElementRef, amountInputRef: ElementRef) {
-    let name = nameInputRef.nativeElement.value;
-    let amount = amountInputRef.nativeElement.value;
-
-    if (!name || !amount) {
-      alert('Please enter a valid name and amount');
-
-      return;
-    }
-
-    const newIngredient = new Ingredient(name, amount);
-
-    this.ingredientAdded.emit(newIngredient);
-
-    alert('Ingredient added');
-
-    nameInputRef.nativeElement.value = '';
-    amountInputRef.nativeElement.value = '';
+  addIngredient(ingredient: Ingredient) {
+    this.ingredients.push(ingredient);
+    this.ingredientAdded.emit(this.ingredients.slice());
   }
 }

@@ -11,13 +11,16 @@ import { ShoppingListService } from '../shared/services/shopping-list.service';
 export class ShoppingListComponent {
   ingredients: Ingredient[];
 
-  constructor(private shoppingListService: ShoppingListService) {
-    this.ingredients = this.shoppingListService.getIngredients();
-  }
+  constructor(private shoppingListService: ShoppingListService) {}
 
   ngOnInit() {
-    this.shoppingListService.ingredientAdded.subscribe((ingredient: Ingredient) => {
-      this.ingredients.push(ingredient);
-    })
+    this.ingredients = this.shoppingListService.getIngredients();
+
+    this.shoppingListService.ingredientAdded.subscribe((ingredients: Ingredient[]) => {
+      console.log(ingredients, 'ingredienrirs');
+
+
+      this.ingredients = ingredients;
+    });
   }
 }
