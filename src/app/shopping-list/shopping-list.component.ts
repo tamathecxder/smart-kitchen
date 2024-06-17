@@ -6,7 +6,6 @@ import { ShoppingListService } from '../shared/services/shopping-list.service';
   selector: 'app-shopping-list',
   templateUrl: './shopping-list.component.html',
   styleUrl: './shopping-list.component.scss',
-  providers: [ShoppingListService]
 })
 export class ShoppingListComponent {
   @Input() ingredients: Ingredient[];
@@ -14,6 +13,8 @@ export class ShoppingListComponent {
   constructor(private shoppingListService: ShoppingListService) {}
 
   ngOnInit() {
+    this.ingredients = this.shoppingListService.getIngredients();
+
     this.shoppingListService.ingredientAdded.subscribe((ingredients: Ingredient[]) => {
       this.ingredients = ingredients;
     });

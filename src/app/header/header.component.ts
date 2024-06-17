@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component } from '@angular/core';
 import { NavigationService } from '../shared/services/navigation.service';
 
 @Component({

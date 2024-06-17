@@ -1,5 +1,6 @@
 import { EventEmitter, Injectable } from '@angular/core';
 import { Ingredient } from '../models/ingredient.model';
+import { NavigationService } from './navigation.service';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,9 @@ export class ShoppingListService {
     new Ingredient('Potatoes', 15),
   ];
 
-  constructor() { }
+  constructor(
+    private navService: NavigationService,
+  ) { }
 
   getIngredients() {
     return this.ingredients.slice();
@@ -21,6 +24,11 @@ export class ShoppingListService {
 
   addIngredient(ingredient: Ingredient) {
     this.ingredients.push(ingredient);
+    this.ingredientAdded.emit(this.ingredients.slice());
+  }
+
+  addIngredients(ingredients: Ingredient[]) {
+    this.ingredients.push(...ingredients);
     this.ingredientAdded.emit(this.ingredients.slice());
   }
 }
