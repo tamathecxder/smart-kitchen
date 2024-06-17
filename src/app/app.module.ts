@@ -14,6 +14,7 @@ import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-it
 import { SuccessAlertComponent } from './ui/success-alert/success-alert.component';
 import { ErrorAlertComponent } from './ui/error-alert/error-alert.component';
 import { DropdownDirective } from './shared/directives/dropdown.directive';
+import { NavigationService } from './shared/services/navigation.service';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,7 @@ import { DropdownDirective } from './shared/directives/dropdown.directive';
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [NavigationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
