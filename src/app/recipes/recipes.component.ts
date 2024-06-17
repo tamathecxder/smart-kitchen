@@ -11,7 +11,11 @@ import { RecipeService } from '../shared/services/recipe.service';
 export class RecipesComponent {
   selectedRecipe: Recipe;
 
-  onRecipeWasSelected(recipe: Recipe) {
-    this.selectedRecipe = recipe;
+  constructor(private recipeService: RecipeService) {}
+
+  ngOnInit() {
+    this.recipeService.recipeSelected.subscribe((recipe: Recipe) => {
+      this.selectedRecipe = recipe;
+    });
   }
 }

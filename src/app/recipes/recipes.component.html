@@ -1,6 +1,6 @@
 <div class="grid grid-cols-5 gap-4">
   <div class="col-span-2 max-h-[calc(100vh-4rem)] overflow-auto">
-    <app-recipe-list (recipeWasSelected)="onRecipeWasSelected($event)"></app-recipe-list>
+    <app-recipe-list></app-recipe-list>
   </div>
   <div class="col-span-3 bg-gray-50 rounded-xl shadow sticky top-0">
     <app-recipe-detail [recipe]="selectedRecipe" *ngIf="selectedRecipe; else noRecipeSelected"></app-recipe-detail>
